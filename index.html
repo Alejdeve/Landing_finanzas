@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro García | Consultor Experto en Banca</title>
+    <!-- Tailwind CSS para diseño moderno y rápido -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuentes Google: Playfair Display (Autoridad) y Inter (Modernidad) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Iconos Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Personalización de la marca */
+        :root {
+            --color-primary: #0f172a; /* Azul noche corporativo */
+            --color-accent: #b45309; /* Dorado/Bronce sobrio para CTAs */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-bg {
+            /* Fondo abstracto profesional de oficinas/finanzas */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efecto sutil en tarjetas */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-slate-900 tracking-tight">AG.</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#fortalezas" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Fortalezas</a>
+                    <a href="#soluciones" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Soluciones</a>
+                    <a href="#experiencia" class="text-slate-600 hover:text-slate-900 px-3 py-2 text-sm font-medium transition-colors">Experiencia</a>
+                </div>
+                <div>
+                    <button onclick="downloadCV()" class="hidden md:inline-flex items-center px-4 py-2 border border-slate-300 text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 focus:outline-none transition-all">
+                        <i class="ph ph-download-simple mr-2 text-lg"></i> CV
+                    </button>
+                    <button onclick="contactWhatsapp()" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-slate-900 hover:bg-slate-800 focus:outline-none transition-all">
+                        Contacto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen min-h-[600px] flex items-center justify-center relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16">
+            <span class="inline-block px-4 py-1 rounded-full bg-blue-900/50 border border-blue-400/30 text-blue-100 text-sm font-semibold tracking-wide uppercase mb-6 fade-in-up">
+                Perfil Híbrido: Financiero & Comercial
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight fade-in-up" style="transition-delay: 100ms;">
+                Alejandro García
+                <span class="block text-2xl md:text-3xl text-slate-300 mt-2 font-light font-sans">Consultor Experto en Banca de Empresas y Gestión de Riesgos</span>
+            </h1>
+            <p class="mt-4 text-xl text-slate-300 max-w-2xl mx-auto mb-10 fade-in-up" style="transition-delay: 200ms;">
+                Conectando la solidez del análisis contable con la agilidad de la captación comercial para la banca del futuro.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up" style="transition-delay: 300ms;">
+                <button onclick="contactWhatsapp()" class="px-8 py-4 bg-white text-slate-900 text-lg font-semibold rounded-lg shadow-lg hover:bg-slate-100 transition-all transform hover:-translate-y-1">
+                    <i class="ph ph-whatsapp-logo mr-2 align-middle text-green-600 text-xl"></i> Agendar Entrevista
+                </button>
+                <button onclick="downloadCV()" class="px-8 py-4 bg-transparent border-2 border-slate-400 text-white text-lg font-semibold rounded-lg hover:bg-white/10 transition-all">
+                    Descargar CV Completo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Narrativa Profesional (Introducción) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-10 lg:mb-0 fade-in-up">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Más allá de los números: Visión estratégica.</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Soy un especialista en operaciones financieras y riesgos con más de 10 años de trayectoria transformando el análisis de datos en oportunidades de negocio rentables.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Mi enfoque combina la precisión técnica de un <strong>Contador Público</strong> con la visión estratégica de un <strong>Máster en Marketing</strong>. He gestionado ciclos completos de crédito, desde la captación comercial en entornos Fintech hasta la formalización jurídica de hipotecas y el cumplimiento normativo AML/KYC en banca internacional.
+                    </p>
+                    <div class="border-l-4 border-slate-900 pl-6 py-2 bg-slate-50">
+                        <p class="italic text-slate-700 font-medium">
+                            "Aporto la solidez técnica para mitigar riesgos complejos y la agilidad comercial necesaria para impulsar el crecimiento de una cartera premium."
+                        </p>
+                    </div>
+                </div>
+                <div class="relative fade-in-up" style="transition-delay: 200ms;">
+                    <!-- Placeholder visual abstracto representando dualidad análisis/comercial -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-slate-200 to-slate-100 transform rotate-3 rounded-2xl"></div>
+                    <div class="relative bg-slate-900 rounded-2xl shadow-xl overflow-hidden p-8 text-white">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-200">Competencias Clave</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="ph ph-check-circle text-green-400 mr-3 text-xl"></i>
+                                <span>Banca Empresas y Banca Personal</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ph ph-check-circle text-green-400 mr-3 text-xl"></i>
+                                <span>Análisis de Estados Financieros (PYMES)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ph ph-check-circle text-green-400 mr-3 text-xl"></i>
+                                <span>Normativa AML/KYC y SARLAFT</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ph ph-check-circle text-green-400 mr-3 text-xl"></i>
+                                <span>Formalización Hipotecaria</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ph ph-check-circle text-green-400 mr-3 text-xl"></i>
+                                <span>Inglés & Catalán (Residencia en BCN)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa de Fortalezas -->
+    <section id="fortalezas" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Pilares de Valor</h2>
+                <p class="mt-4 text-slate-600">Por qué mi perfil encaja con las necesidades actuales del banco.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Fortaleza 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 card-hover transition-all fade-in-up">
+                    <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ph ph-chart-pie-slice text-3xl text-blue-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Análisis de Riesgo 360°</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Evaluación precisa de estados financieros y viabilidad crediticia. Reduzco el riesgo de impago mediante un análisis contable riguroso.
+                    </p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside">
+                        <li>Contador Público Titulado</li>
+                        <li>Experiencia en Rentas Independientes</li>
+                    </ul>
+                </div>
+
+                <!-- Fortaleza 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 card-hover transition-all fade-in-up" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ph ph-briefcase text-3xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Estratega Comercial</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Captación de PYMES y fidelización de carteras premium. Capacidad probada para generar leads sin supervisión constante.
+                    </p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside">
+                        <li>Captación Fintech</li>
+                        <li>Gestión de Alianzas Comerciales</li>
+                    </ul>
+                </div>
+
+                <!-- Fortaleza 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 card-hover transition-all fade-in-up" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-emerald-50 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ph ph-shield-check text-3xl text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Garantía de Cumplimiento</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Experto en normativa AML y prevención de fraude. Integridad operativa crítica para evitar sanciones en banca de empresas.
+                    </p>
+                    <ul class="text-xs text-slate-500 list-disc list-inside">
+                        <li>Ex-Analista AML Scotiabank</li>
+                        <li>Normativa SARLAFT</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solución a Dolores (Pain Points) -->
+    <section id="soluciones" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:justify-between lg:items-end mb-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-4">Resolviendo los desafíos del sector</h2>
+                    <p class="text-slate-400">Cómo mi intervención impacta directamente en los resultados del banco.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Dolor 1 -->
+                <div class="flex gap-6 fade-in-up">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-500/10 border border-red-500/30 text-red-400">
+                            <i class="ph ph-trend-down text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-2">¿Crecimiento estancado en Banca Empresas?</h4>
+                        <p class="text-slate-400 text-sm mb-3">El miedo a perder cuota de mercado requiere perfiles con "hambre comercial".</p>
+                        <div class="p-4 bg-slate-800 rounded-lg border-l-4 border-green-500">
+                            <p class="text-white text-sm font-medium">Mi Solución:</p>
+                            <p class="text-slate-300 text-sm">Implemento estrategias de captación basadas en alianzas y marketing relacional. Historial probado impulsando colocación de productos en Banco AV Villas y Banco Agrario.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dolor 2 -->
+                <div class="flex gap-6 fade-in-up" style="transition-delay: 100ms;">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500/10 border border-orange-500/30 text-orange-400">
+                            <i class="ph ph-warning-circle text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-2">¿Riesgo operacional descontrolado?</h4>
+                        <p class="text-slate-400 text-sm mb-3">Errores en análisis financiero o formalización jurídica causan pérdidas.</p>
+                        <div class="p-4 bg-slate-800 rounded-lg border-l-4 border-blue-500">
+                            <p class="text-white text-sm font-medium">Mi Solución:</p>
+                            <p class="text-slate-300 text-sm">Perfil híbrido Contador + Gestor Hipotecario. Aplico mi base contable para desgranar balances y rigor técnico en revisión de escrituras y garantías.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia Relevante -->
+    <section id="experiencia" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Trayectoria Sólida</h2>
+            
+            <div class="relative border-l border-slate-200 ml-4 space-y-12">
+                <!-- Item 1 -->
+                <div class="relative pl-8 fade-in-up">
+                    <span class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-blue-600 border-4 border-white"></span>
+                    <h3 class="text-lg font-bold text-slate-900">Scotiabank</h3>
+                    <span class="text-sm font-semibold text-blue-600">Profesional I AML & Cumplimiento</span>
+                    <p class="mt-2 text-slate-600 text-sm">Aseguramiento del cumplimiento de normativa SARLAFT y prevención de blanqueo de capitales en entornos internacionales.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative pl-8 fade-in-up">
+                    <span class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-slate-300 border-4 border-white"></span>
+                    <h3 class="text-lg font-bold text-slate-900">Banco AV Villas & Banco Agrario</h3>
+                    <span class="text-sm font-semibold text-blue-600">Gestión Comercial</span>
+                    <p class="mt-2 text-slate-600 text-sm">Impulso en la colocación de productos financieros y cumplimiento de metas comerciales agresivas.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative pl-8 fade-in-up">
+                    <span class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-slate-300 border-4 border-white"></span>
+                    <h3 class="text-lg font-bold text-slate-900">Tecnotramit</h3>
+                    <span class="text-sm font-semibold text-blue-600">Gestión Integral Hipotecaria</span>
+                    <p class="mt-2 text-slate-600 text-sm">Gestión desde la aprobación del riesgo hasta la firma en notaría, incluyendo verificación registral.</p>
+                </div>
+                
+                 <!-- Item 4 -->
+                 <div class="relative pl-8 fade-in-up">
+                    <span class="absolute -left-2 top-0 h-4 w-4 rounded-full bg-slate-300 border-4 border-white"></span>
+                    <h3 class="text-lg font-bold text-slate-900">Sygna</h3>
+                    <span class="text-sm font-semibold text-blue-600">Agente Comercial</span>
+                    <p class="mt-2 text-slate-600 text-sm">Captación de PYMES y autónomos mediante alianzas estratégicas con asesorías.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonio (Validación Social) -->
+    <section id="testimonio" class="py-16 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-3xl mx-auto px-4 text-center fade-in-up">
+            <i class="ph ph-quotes text-4xl text-slate-300 mb-6"></i>
+            <blockquote class="text-xl md:text-2xl font-serif text-slate-800 italic mb-6">
+                "Alejandro destaca por su capacidad analítica y su orientación a resultados en entornos de alta presión. Un activo valioso para cualquier equipo financiero."
+            </blockquote>
+            <div class="flex items-center justify-center space-x-3">
+                <div class="h-10 w-10 rounded-full bg-slate-300 flex items-center justify-center text-slate-500 text-xs font-bold">Ref</div>
+                <div class="text-left">
+                    <div class="text-sm font-bold text-slate-900">Referencia Profesional</div>
+                    <div class="text-xs text-slate-500">Gerente de Sector / Cliente Anterior</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 bg-white text-center">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-up">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Hablemos de cómo potenciar su cartera comercial</h2>
+            <p class="text-lg text-slate-600 mb-10">
+                Estoy disponible para una entrevista inmediata. Resido en Barcelona y cuento con disponibilidad completa.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="contactWhatsapp()" class="px-8 py-4 bg-slate-900 text-white text-lg font-bold rounded-lg shadow-lg hover:bg-slate-800 transition-all">
+                    Agendar Entrevista ahora
+                </button>
+                <button onclick="downloadCV()" class="px-8 py-4 bg-white border border-slate-300 text-slate-700 text-lg font-medium rounded-lg hover:bg-slate-50 transition-all">
+                    Ver CV Completo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <span class="text-white font-bold text-lg">Alejandro García</span>
+                <p class="mt-2">Consultor Banca & Riesgos</p>
+                <p>Barcelona, España</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2">Contacto</h4>
+                <p class="hover:text-white transition-colors cursor-pointer" onclick="contactWhatsapp()">+34 [Tu Número Aquí]</p>
+                <p class="hover:text-white transition-colors cursor-pointer">email@ejemplo.com</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2">Idiomas</h4>
+                <p>Español (Nativo)</p>
+                <p>Catalán (Avanzado)</p>
+                <p>Inglés (Profesional)</p>
+            </div>
+        </div>
+        <div class="text-center mt-12 pt-8 border-t border-slate-800 text-xs">
+            &copy; 2024 Alejandro García. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- JavaScript para interactividad -->
+    <script>
+        // Configuración de contacto
+        const whatsappNumber = "34654413172";
+        const cvUrl = "assets/CV_Alejandro_Garcia.pdf";
+
+        function contactWhatsapp() {
+            const message = "Hola Alejandro, he visto tu perfil web y me gustaría concertar una entrevista.";
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        function downloadCV() {
+            // Simulación de descarga o abrir PDF
+            // En producción, asegúrate de tener el archivo en la carpeta correcta
+            const link = document.createElement('a');
+            link.href = cvUrl; 
+            link.download = 'CV_Alejandro_Garcia.pdf';
+            // Para demo, alertamos si no hay archivo real
+            alert("Acción de descarga iniciada. Asegúrate de colocar tu archivo PDF en la carpeta 'assets' y actualizar la variable 'cvUrl' en el código.");
+            // link.click(); // Descomentar cuando el archivo exista
+        }
+
+        // Animación al hacer scroll (Intersection Observer)
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            const elements = document.querySelectorAll('.fade-in-up');
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
