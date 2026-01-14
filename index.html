@@ -371,14 +371,12 @@
         }
 
         function downloadCV() {
-            // Simulación de descarga o abrir PDF
-            // En producción, asegúrate de tener el archivo en la carpeta correcta
             const link = document.createElement('a');
-            link.href = cvUrl; 
+            link.href = cvUrl;
             link.download = 'CV_Alejandro_Garcia.pdf';
-            // Para demo, alertamos si no hay archivo real
-            alert("Acción de descarga iniciada. Asegúrate de colocar tu archivo PDF en la carpeta 'assets' y actualizar la variable 'cvUrl' en el código.");
-            // link.click(); // Descomentar cuando el archivo exista
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
 
         // Animación al hacer scroll (Intersection Observer)
